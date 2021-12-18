@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import s from './Friend.module.css';
+
 export default function Friends({ isOnline, avatar, name }) {
     return (
-       <li >
-        <span > {isOnline === true ? "online" : "offline" }</span>
-        <img  src={avatar} alt={name} width="48" />
-        <p >{name}</p>
-</li>
+       <li className={s.item}>
+        <span className={isOnline ? s.statusOn : s.statusOff}></span>
+        <img className={s.avatar} src={avatar} alt={name} width="48" />
+        <p className={s.name}>{name}</p>
+       </li>
     );
 }
 
